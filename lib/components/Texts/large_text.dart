@@ -13,7 +13,8 @@ class LargeText extends StatelessWidget {
       maxLines: 2,
       textAlign: TextAlign.center,
       style: TextStyle(
-          color: fontColor??App.secondaryColor,
+          fontWeight: FontWeight.bold,
+          color: fontColor ?? App.secondaryColor,
           letterSpacing: 3,
           fontSize: 30,
           height: 1.2),

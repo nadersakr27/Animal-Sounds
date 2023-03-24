@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/Data/animal.dart';
-import 'package:voices_of_animals/Data/data.dart';
-import 'package:voices_of_animals/pages/Details/details.dart';
-// import 'package:voices_of_animals/routes.dart';
 import 'package:voices_of_animals/theme/theme.dart';
 import 'pages/HomePage/home_page.dart';
 
@@ -22,13 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'Animals Sounds',
       // routes: routes,
       theme: theme(),
-      home: DetailsPage(
-        index: 4,
-        animal: Animal(
-          name: "Lion",
-          soundName: "wawoo",
-        ),
-      ),
+      home: const HomePage(),
+      
     );
   }
 }

@@ -12,17 +12,9 @@ class DirectionSvgAccordionToIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return index ==
             null // check if the index didn't pass to the class as it be null or passed and have a value
-        ? SvgBox(
-            animalSvgPath: svg,
-            width: 220,
-            height: 220,
-          )
+        ? SvgBox.details(svg)
         : index!.isOdd
-            ? SvgBox(
-                animalSvgPath: svg,
-                width: 220,
-                height: 220,
-              )
+            ? SvgBox.details(svg)
             : Transform(
                 transform: Matrix4.translationValues(
                   MediaQuery.of(context).size.width -
@@ -36,11 +28,7 @@ class DirectionSvgAccordionToIndex extends StatelessWidget {
                     1.0,
                     1.0,
                   ),
-                child: SvgBox(
-                  animalSvgPath: svg,
-                  width: 220,
-                  height: 220,
-                ),
+                child: SvgBox.details(svg)
               );
   }
 }

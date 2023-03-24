@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:voices_of_animals/components/constances.dart';
 import 'package:voices_of_animals/components/Texts/mid_text.dart';
 import 'package:voices_of_animals/components/Texts/small_text.dart';
-import 'package:voices_of_animals/components/units/land_box.dart';
-import 'package:voices_of_animals/components/units/svg_box.dart';
+import 'package:voices_of_animals/components/units/svgbox_landbox.dart';
 
 class AnimalCard extends StatelessWidget {
   final String? animalName;
@@ -13,6 +11,7 @@ class AnimalCard extends StatelessWidget {
   late final int?
       index; // I pass index to this class because I need to reflect Svg according to its index
   // Index is nullable to be able to use it without being in a list or has an order
+  // ignore: prefer_const_constructors_in_immutables
   AnimalCard({
     Key? key,
     this.index,
@@ -26,8 +25,7 @@ class AnimalCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,
-      color: Colors.white,
-      height: 125,
+      height: 130,
       child: Row(
         children: [
           index ==
@@ -47,14 +45,22 @@ class AnimalCard extends StatelessWidget {
                         ),
                       child: SvgWithLandBox(animalSvgPath: animalSvgPath),
                     ),
-          Expanded(
-            child: AnimalNameTextAndItsSoundText(
-                animalName: animalName, animalSoundName: animalSoundName),
+          const Spacer(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              width: 160,
+              height: 80,
+              child: AnimalNameTextAndItsSoundText(
+                  animalName: animalName, animalSoundName: animalSoundName),
+            ),
           ),
+          const Spacer(),
           const Icon(
             Icons.arrow_forward_ios,
             color: App.primaryColor,
-          )
+          ),
         ],
       ),
     );
@@ -77,38 +83,15 @@ class AnimalNameTextAndItsSoundText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        MidText(text: animalName!),
-        const SizedBox(
-          height: 10,
+        MidText(
+          text: animalName!,
+          fontWeight: FontWeight.bold,
         ),
-        SizedBox(
-            width: 150, child: SmallText(text: "His Sound : $animalSoundName")),
+        const SizedBox(
+          height: 8,
+        ),
+        SmallText(text: "His Sound : $animalSoundName"),
       ],
-    );
-  }
-}
-
-class SvgWithLandBox extends StatelessWidget {
-  const SvgWithLandBox({
-    super.key,
-    required this.animalSvgPath,
-  });
-
-  final String? animalSvgPath;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 110,
-      child: Stack(
-        children: [
-          const LandBox(
-            width: 110,
-            height: 56,
-          ),
-          SvgBox(animalSvgPath: animalSvgPath)
-        ],
-      ),
     );
   }
 }

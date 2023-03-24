@@ -8,19 +8,16 @@ class ArrowBoxAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green.withOpacity(0.5),
-      child: Align(
-          alignment: Alignment.centerLeft,
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: App.primaryColor,
-            ),
-          )),
-    );
+    return Align(
+        alignment: Alignment.centerLeft,
+        child: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: App.primaryColor,
+          ),
+        ));
   }
 }

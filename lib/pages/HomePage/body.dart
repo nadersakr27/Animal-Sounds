@@ -29,7 +29,7 @@ class Body extends StatelessWidget {
                   // so I go to Directionality widget
                   textDirection:
                       i.isOdd ? TextDirection.rtl : TextDirection.ltr,
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DetailsPage(
@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
                     child: AnimalCard(
                         index: i,
                         animalName: data[i].name,
-                        animalSvgPath: '${Data.animals[i].name}.svg',
+                        animalSvgPath: '${(Data.animals[i].name??'lion').toLowerCase()}.svg',
                         animalSoundName: data[i].soundName),
                   ),
                 );
