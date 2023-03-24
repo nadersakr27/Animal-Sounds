@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/Data/animal.dart';
-import 'package:voices_of_animals/components/Texts/constances.dart';
+import 'package:voices_of_animals/colors.dart';
 import 'package:voices_of_animals/components/units/arrow.dart';
 import 'package:voices_of_animals/components/units/direction_svg.dart';
 import 'package:voices_of_animals/components/units/info_texts_list.dart';
@@ -41,7 +40,7 @@ class Body extends StatelessWidget {
                 children: [
                   ...infoTextList(animal),
                   const CircleAvatar(
-                    backgroundColor: App.secondaryColor,
+                    backgroundColor: AppColor.secondaryColor,
                     radius: 28,
                     child: Icon(
                       Icons.play_arrow,

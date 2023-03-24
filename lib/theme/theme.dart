@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/components/constances.dart';
+import 'package:voices_of_animals/colors.dart';
 
 ThemeData theme() {
-  Color color = App.primaryColor;
+  Color color = AppColor.primaryColor;
   MaterialColor materialColor = MaterialColor(color.value, {
     50: color.withOpacity(0.1),
     100: color.withOpacity(0.2),
@@ -16,7 +16,7 @@ ThemeData theme() {
     900: color.withOpacity(1.0),
   });
   return ThemeData(
-    // fontFamily: "BushForest",
+    fontFamily: "font",
     primarySwatch: materialColor,
   );
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/components/constances.dart';
+import 'package:voices_of_animals/colors.dart';
 
 class LandBox extends StatelessWidget {
   final double width;
@@ -23,12 +23,12 @@ class LandBox extends StatelessWidget {
                 offset: Offset(0, 6),
                 blurRadius: 8,
                 spreadRadius: 2,
-                color: App.secondaryColor),
+                color: AppColor.secondaryColor),
             BoxShadow(
                 offset: Offset(-4, 1), blurRadius: 4, color: Colors.white),
             BoxShadow(offset: Offset(4, 1), blurRadius: 4, color: Colors.white),
           ],
-          color: App.primaryColor,
+          color: AppColor.primaryColor,
           borderRadius: BorderRadius.circular(15),
         ),
       ),

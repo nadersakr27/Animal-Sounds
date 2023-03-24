@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/components/constances.dart';
+import 'package:voices_of_animals/colors.dart';
 
 class LargeText extends StatelessWidget {
   final String text;
@@ -13,9 +13,8 @@ class LargeText extends StatelessWidget {
       maxLines: 2,
       textAlign: TextAlign.center,
       style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: fontColor ?? App.secondaryColor,
-          letterSpacing: 3,
+          color: fontColor ?? AppColor.secondaryColor,
+          letterSpacing: 3.5,
           fontSize: 30,
           height: 1.2),
     );

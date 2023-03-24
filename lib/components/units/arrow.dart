@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/components/constances.dart';
+import 'package:voices_of_animals/colors.dart';
 
 class ArrowBoxAppBar extends StatelessWidget {
   const ArrowBoxAppBar({
@@ -16,7 +16,7 @@ class ArrowBoxAppBar extends StatelessWidget {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: App.primaryColor,
+            color: AppColor.primaryColor,
           ),
         ));
   }

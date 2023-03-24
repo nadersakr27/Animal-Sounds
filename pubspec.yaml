@@ -74,9 +74,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: BushForest
+    - family: font
       fonts:
-        - asset: assets\fonts\BushForest-lgEOw.otf
+        - asset: assets/fonts/font.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:voices_of_animals/components/constances.dart';
-import 'package:voices_of_animals/components/Texts/mid_text.dart';
-import 'package:voices_of_animals/components/Texts/small_text.dart';
+import 'package:voices_of_animals/colors.dart';
+import 'package:voices_of_animals/components/units/name_sound_texts.dart';
 import 'package:voices_of_animals/components/units/svgbox_landbox.dart';
 
 class AnimalCard extends StatelessWidget {
@@ -59,39 +58,10 @@ class AnimalCard extends StatelessWidget {
           const Spacer(),
           const Icon(
             Icons.arrow_forward_ios,
-            color: App.primaryColor,
+            color: AppColor.primaryColor,
           ),
         ],
       ),
-    );
-  }
-}
-
-class AnimalNameTextAndItsSoundText extends StatelessWidget {
-  const AnimalNameTextAndItsSoundText({
-    super.key,
-    required this.animalName,
-    required this.animalSoundName,
-  });
-
-  final String? animalName;
-  final String? animalSoundName;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        MidText(
-          text: animalName!,
-          fontWeight: FontWeight.bold,
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        SmallText(text: "His Sound : $animalSoundName"),
-      ],
     );
   }
 }
