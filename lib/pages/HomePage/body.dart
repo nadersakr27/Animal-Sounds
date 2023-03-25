@@ -38,9 +38,9 @@ class Body extends StatelessWidget {
                     },
                     child: AnimalCard(
                         index: i,
-                        animalName: data[i].name,
-                        animalSvgPath: '${(Data.animals[i].name??'lion').toLowerCase()}.svg',
-                        animalSoundName: data[i].soundName),
+                        animalName: data[i].name??"no name",
+                        animalSvgPath: '${(data[i].name??'lion').toLowerCase()}.svg',
+                        animalSoundName: data[i].soundName??'no sound name'),
                   ),
                 );
               }),

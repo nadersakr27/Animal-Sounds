@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/colors.dart';
 import 'package:voices_of_animals/components/units/name_sound_texts.dart';
-import 'package:voices_of_animals/components/units/svgbox_landbox.dart';
+import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
 
 class AnimalCard extends StatelessWidget {
-  final String? animalName;
-  final String? animalSvgPath;
-  final String? animalSoundName;
+  final String animalName;
+  final String animalSvgPath;
+  final String animalSoundName;
   late final int?
       index; // I pass index to this class because I need to reflect Svg according to its index
   // Index is nullable to be able to use it without being in a list or has an order
@@ -24,26 +24,17 @@ class AnimalCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,
-      height: 130,
+      height: 140,
       child: Row(
         children: [
-          index ==
-                  null // check if the index didn't pass to the class as it be null or passed and have a value
-              ? SvgWithLandBox(animalSvgPath: animalSvgPath)
-              : index!.isOdd
-                  ? SvgWithLandBox(animalSvgPath: animalSvgPath)
-                  : Transform(
-                      transform: Matrix4.translationValues(
-                        110, // the width of the Widget to reflect it in its position
-                        0.0,
-                        0.0,
-                      )..scale(
-                          -1.0,
-                          1.0,
-                          1.0,
-                        ),
-                      child: SvgWithLandBox(animalSvgPath: animalSvgPath),
-                    ),
+          Hero(
+              tag: animalSvgPath,
+              child: ReflectableSvgAndLand(
+                landHeight: 62,
+                svg: animalSvgPath,
+                index: index,
+                svgBottomPadding: 10,
+              )),
           const Spacer(),
           Align(
             alignment: Alignment.bottomCenter,
@@ -52,7 +43,9 @@ class AnimalCard extends StatelessWidget {
               width: 160,
               height: 80,
               child: AnimalNameTextAndItsSoundText(
-                  animalName: animalName, animalSoundName: animalSoundName),
+                animalName: animalName,
+                animalSoundName: animalSoundName,
+              ),
             ),
           ),
           const Spacer(),

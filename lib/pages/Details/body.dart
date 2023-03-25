@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:voices_of_animals/Data/animal.dart';
 import 'package:voices_of_animals/colors.dart';
 import 'package:voices_of_animals/components/units/arrow.dart';
-import 'package:voices_of_animals/components/units/direction_svg.dart';
 import 'package:voices_of_animals/components/units/info_texts_list.dart';
-import 'package:voices_of_animals/components/units/land_box.dart';
+import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
 
 class Body extends StatelessWidget {
   final Animal animal;
@@ -26,10 +25,19 @@ class Body extends StatelessWidget {
               height: 180,
               child: Stack(
                 children: [
-                  const LandBox(width: double.infinity, height: 80),
-                  DirectionSvgAccordionToIndex(
-                    index: index,
-                    svg: svg,
+                  Hero(
+                    tag: svg,
+                    child: ReflectableSvgAndLand(
+                      svg: svg,
+                      index: index,
+                      boxWidth: double.infinity,
+                      landHeight: 80,
+                      landWidth: double.infinity,
+                      svgHeight: 200,
+                      svgWidth: 200,
+                      svgBottomPadding: 20,
+                      reflectWidth: MediaQuery.of(context).size.width - 40,
+                    ),
                   ),
                 ],
               ),
