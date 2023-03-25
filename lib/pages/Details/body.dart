@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/Data/animal.dart';
 import 'package:voices_of_animals/colors.dart';
-import 'package:voices_of_animals/components/Texts/large_text.dart';
 import 'package:voices_of_animals/components/units/arrow.dart';
 import 'package:voices_of_animals/components/units/info_texts_list.dart';
 import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
@@ -68,24 +67,20 @@ class _BodyState extends State<Body> {
           children: [
             const ArrowBoxAppBar(),
             SizedBox(
-              height: 180,
-              child: Stack(
-                children: [
-                  Hero(
-                    tag: svg,
-                    child: ReflectableSvgAndLand(
-                      svg: svg,
-                      index: widget.index,
-                      boxWidth: double.infinity,
-                      landHeight: 80,
-                      landWidth: double.infinity,
-                      svgHeight: 200,
-                      svgWidth: 200,
-                      svgBottomPadding: 20,
-                      reflectWidth: MediaQuery.of(context).size.width - 40,
-                    ),
-                  ),
-                ],
+              height: 240,
+              child: Hero(
+                tag: svg,
+                child: ReflectableSvgAndLand(
+                  svg: svg,
+                  index: widget.index,
+                  boxWidth: double.infinity,
+                  landHeight: 105,
+                  landWidth: double.infinity,
+                  svgHeight: 220,
+                  svgWidth: 220,
+                  svgBottomPadding: 20,
+                  reflectWidth: MediaQuery.of(context).size.width - 40,
+                ),
               ),
             ),
             Expanded(
@@ -102,7 +97,6 @@ class _BodyState extends State<Body> {
                         await player.seek(position);
                         await player.resume();
                       }),
-                
                   CircleAvatar(
                     backgroundColor: AppColor.secondaryColor,
                     radius: 35,

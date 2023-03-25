@@ -73,6 +73,11 @@ class Data {
       'discretion': 'stubborn but reliable'
     }),
     Animal.fromJson({
+      'name': 'Gorilla',
+      'soundName': 'grumble',
+      'discretion': 'Communicative and low-pitched'
+    }),
+    Animal.fromJson({
       'name': 'Chicken',
       'soundName': 'cluck',
       'discretion': 'timid but useful'

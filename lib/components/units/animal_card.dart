@@ -24,7 +24,7 @@ class AnimalCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,
-      height: 140,
+      height: 145,
       child: Row(
         children: [
           Hero(

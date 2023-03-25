@@ -14,7 +14,7 @@ class Body extends StatelessWidget {
         Data.animals; // to load it only one time in building the widget
     return Column(children: [
       const MyBanner(
-          bgSvgPath: "assets/svg/land.svg", title: "Animals\nSounds"),
+          bgSvgPath: "assets/svg/land.svg", title: "Animal\nSounds"),
       Expanded(
         child: ScrollConfiguration(
           // to remove scroll glow
