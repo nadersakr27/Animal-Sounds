@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Animals Sounds',
+      title: 'Animal Sounds',
       // routes: routes,
       theme: theme(),
       home: const HomePage(),
