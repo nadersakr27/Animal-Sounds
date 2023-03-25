@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- import 'package:voices_of_animals/theme/theme.dart';
+import 'package:voices_of_animals/theme/theme.dart';
 import 'pages/HomePage/home_page.dart';
 
 void main() {

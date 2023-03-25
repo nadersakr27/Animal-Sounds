@@ -1,19 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/Data/animal.dart';
 import 'package:voices_of_animals/colors.dart';
+import 'package:voices_of_animals/components/Texts/large_text.dart';
 import 'package:voices_of_animals/components/units/arrow.dart';
 import 'package:voices_of_animals/components/units/info_texts_list.dart';
 import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   final Animal animal;
   late final int? index;
   // ignore: prefer_const_constructors_in_immutables
   Body({this.index, super.key, required this.animal});
 
   @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  final player = AudioPlayer();
+  bool isPlaying = false;
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
+
+  @override
+  void initState() {
+    super.initState();
+    setAudio();
+    player.onPlayerStateChanged.listen((event) {
+      setState(() {
+        isPlaying = event == PlayerState.playing;
+      });
+    });
+    player.onDurationChanged.listen((event) {
+      setState(() {
+        duration = event;
+      });
+    });
+    player.onPositionChanged.listen((event) {
+      setState(() {
+        position = event;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    player.dispose();
+  }
+
+  Future setAudio() {
+    return player.setReleaseMode(ReleaseMode.loop);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final String svg = '${(animal.name ?? "chicken").toLowerCase()}.svg';
+    final String svg = '${(widget.animal.name ?? "chicken").toLowerCase()}.svg';
+    final String sound =
+        '${(widget.animal.name ?? "chicken").toLowerCase()}.mp3';
     return Padding(
       padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       child: SizedBox(
@@ -29,7 +75,7 @@ class Body extends StatelessWidget {
                     tag: svg,
                     child: ReflectableSvgAndLand(
                       svg: svg,
-                      index: index,
+                      index: widget.index,
                       boxWidth: double.infinity,
                       landHeight: 80,
                       landWidth: double.infinity,
@@ -46,17 +92,33 @@ class Body extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ...infoTextList(animal),
-                  const CircleAvatar(
+                  ...infoTextList(widget.animal),
+                  Slider(
+                      min: 0,
+                      max: duration.inSeconds.toDouble(),
+                      value: position.inSeconds.toDouble(),
+                      onChanged: (value) async {
+                        final position = Duration(seconds: value.toInt());
+                        await player.seek(position);
+                        await player.resume();
+                      }),
+                
+                  CircleAvatar(
                     backgroundColor: AppColor.secondaryColor,
-                    radius: 28,
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 30,
+                    radius: 35,
+                    child: IconButton(
+                      icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                      iconSize: 50,
                       color: Colors.white,
+                      onPressed: () async {
+                        if (isPlaying) {
+                          await player.pause();
+                        } else {
+                          await player.play(AssetSource(sound));
+                        }
+                      },
                     ),
                   ),
-                  Slider(value: 0.5, onChanged: (value) {}),
                   const SizedBox(
                     height: 5,
                   )

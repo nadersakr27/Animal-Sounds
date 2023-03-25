@@ -88,7 +88,7 @@ class Data {
       'discretion': 'tough and resilient'
     }),
     Animal.fromJson({
-      'name': 'Brid',
+      'name': 'Bird',
       'soundName': 'chirp',
       'discretion': 'colorful and melodious'
     }),
