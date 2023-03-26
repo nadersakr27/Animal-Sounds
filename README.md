@@ -29,5 +29,5 @@ In this app learn many things
 
 8 - I learned how to make the application suitable for all mobile devices and not to make the application change its dimensions when the          user tries to rotate the device
 
+![Animal Sounds](https://user-images.githubusercontent.com/87886756/227755533-b03c22cd-f068-4f15-9377-2b687807bce9.png)
 
-![animal_sounds](https://user-images.githubusercontent.com/87886756/227700480-ca7cb082-d546-40cd-b65d-581ac623586a.png)
