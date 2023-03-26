@@ -17,10 +17,13 @@ In this app learn many things
 5 - I learned to choose the appropriate fonts for the idea of the application and add a custom font to the application
 
 6 - Learn many new and very important widgets
-     1 - Directionalty: Since I needed to change the direction of some widgets to add an aesthetic touch to the application,
+    
+    1 - Directionalty: Since I needed to change the direction of some widgets to add an aesthetic touch to the application,
         and there was       text,    I had to use this widget
-     2 - Transport : Since I needed to flip some animal pictures to fit the shape and direction
-     3 - ScrollBehavior: to avoid glow when scrolling
+    
+    2 - Transport : Since I needed to flip some animal pictures to fit the shape and direction
+    
+    3 - ScrollBehavior: to avoid glow when scrolling
         And much many widgets
 
 7 - I learned to deal with audio files in this application. Learn a lot about the audioPlayer plugin and how to stop the sound and complete      the sound
