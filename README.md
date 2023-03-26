@@ -20,4 +20,5 @@ In this app learn many things
 7 - I learned to deal with audio files in this application. Learn a lot about the audioPlayer plugin and how to stop the sound and complete      the sound
 8 - I learned how to make the application suitable for all mobile devices and not to make the application change its dimensions when the          user tries to rotate the device
 
+
 ![animal_sounds](https://user-images.githubusercontent.com/87886756/227700480-ca7cb082-d546-40cd-b65d-581ac623586a.png)
