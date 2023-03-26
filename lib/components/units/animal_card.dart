@@ -31,11 +31,11 @@ class AnimalCard extends StatelessWidget {
           Hero(
               tag: animalSvgPath,
               child: ReflectableSvgAndLand(
-                landHeight: 62,
+                landHeight:  getProportionateScreenHeight(62),
                
                 svg: animalSvgPath,
                 index: index,
-                svgBottomPadding: 10,
+                svgBottomPadding:  getProportionateScreenHeight(10),
               )),
           const Spacer(),
           Align(
@@ -43,7 +43,7 @@ class AnimalCard extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(bottom: getProportionateScreenHeight(10)),
               width: getProportionateScreenWidth(160),
-              height: getProportionateScreenHeight(80),
+              height: getProportionateScreenHeight(100),
               child: AnimalNameTextAndItsSoundText(
                 animalName: animalName,
                 animalSoundName: animalSoundName,

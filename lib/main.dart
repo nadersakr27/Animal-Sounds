@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:voices_of_animals/size_config.dart';
 import 'package:voices_of_animals/theme/theme.dart';
 import 'pages/HomePage/home_page.dart';
-
+import 'package:flutter/services.dart';
 void main() {
+  // to make app support only portrait mode and will not rotate when the user rotates the device.
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 
