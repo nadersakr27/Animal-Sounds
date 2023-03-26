@@ -1,8 +1,7 @@
 # Animal Sounds
 
-Learning application for children to identify the sounds of animals
-The application consists of two pages page to choose the animal
-And the next page to hear the voice of the animal and know some information about this animal
+Learning application for children, It was built to help children learn about animals and their sounds in an interactive way. The application features two pages that allow children to choose an animal and listen to its sound while also learning some information about the animal. 
+
 
 ## In this app I learned 
 In this app learn many things
