@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:voices_of_animals/size_config.dart';
 import 'package:voices_of_animals/theme/theme.dart';
 import 'pages/HomePage/home_page.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized;
   runApp(const MyApp());
 }
 
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context); // Initialize SizeConfig
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Animal Sounds',
@@ -23,3 +24,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

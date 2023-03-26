@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/components/units/svgbox_landbox.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class ReflectableSvgAndLand extends StatelessWidget {
   final double? boxHeight;
@@ -50,7 +51,7 @@ class ReflectableSvgAndLand extends StatelessWidget {
                 svgBottomPadding: svgBottomPadding)
             : Transform(
                 transform: Matrix4.translationValues(
-                  reflectWidth??110, // the width of the Widget to reflect it in its position
+                  reflectWidth?? getProportionateScreenWidth(110), // the width of the Widget to reflect it in its position
                   0.0,
                   0.0,
                 )..scale(

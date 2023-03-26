@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/components/Texts/mid_text.dart';
 import 'package:voices_of_animals/components/Texts/small_text.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class AnimalNameTextAndItsSoundText extends StatelessWidget {
   const AnimalNameTextAndItsSoundText({
@@ -21,8 +22,8 @@ class AnimalNameTextAndItsSoundText extends StatelessWidget {
         MidText(
           text: animalName!,
         ),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height:  getProportionateScreenHeight(8),
         ),
         SmallText(text: "His Sound : $animalSoundName"),
       ],

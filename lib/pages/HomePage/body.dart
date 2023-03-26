@@ -5,6 +5,7 @@ import 'package:voices_of_animals/Data/data.dart';
 import 'package:voices_of_animals/components/units/my_banner.dart';
 import 'package:voices_of_animals/pages/Details/details.dart';
 import 'package:voices_of_animals/pages/HomePage/my_behavior.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -13,8 +14,7 @@ class Body extends StatelessWidget {
     List<Animal> data =
         Data.animals; // to load it only one time in building the widget
     return Column(children: [
-      const MyBanner(
-          bgSvgPath: "assets/svg/land.svg", title: "Animal\nSounds"),
+      const MyBanner(bgSvgPath: "assets/svg/land.svg", title: "Animal\nSounds"),
       Expanded(
         child: ScrollConfiguration(
           // to remove scroll glow
@@ -33,21 +33,23 @@ class Body extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DetailsPage(
-                                animal: data[i],index: i,
+                                animal: data[i],
+                                index: i,
                               )));
                     },
                     child: AnimalCard(
                         index: i,
-                        animalName: data[i].name??"no name",
-                        animalSvgPath: '${(data[i].name??'lion').toLowerCase()}.svg',
-                        animalSoundName: data[i].soundName??'no sound name'),
+                        animalName: data[i].name ?? "no name",
+                        animalSvgPath:
+                            '${(data[i].name ?? '').toLowerCase()}.svg',
+                        animalSoundName: data[i].soundName ?? 'no sound name'),
                   ),
                 );
               }),
         ),
       ),
-      const SizedBox(
-        height: 20,
+      SizedBox(
+        height: getProportionateScreenHeight(20),
       )
     ]);
   }

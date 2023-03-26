@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/colors.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class SmallText extends StatelessWidget {
   final String text;
@@ -11,10 +12,10 @@ class SmallText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: 2,
       textAlign: TextAlign.center,
-      style: const TextStyle(
+      style: TextStyle(
         color: AppColor.primaryColor,
         letterSpacing: 1.5,
-        fontSize: 14,
+        fontSize:  getProportionateScreenHeight(14),
       ),
     );
   }

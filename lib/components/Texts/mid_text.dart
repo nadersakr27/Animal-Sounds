@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/colors.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class MidText extends StatelessWidget {
   final String text;
@@ -18,7 +19,7 @@ class MidText extends StatelessWidget {
         fontWeight: fontWeight,
         color: fontColor ?? AppColor.secondaryColor,
         letterSpacing: 1.7,
-        fontSize: 24,
+        fontSize:  getProportionateScreenHeight(24),
       ),
     );
   }

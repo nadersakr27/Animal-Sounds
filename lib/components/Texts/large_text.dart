@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voices_of_animals/colors.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class LargeText extends StatelessWidget {
   final String text;
@@ -15,7 +16,7 @@ class LargeText extends StatelessWidget {
       style: TextStyle(
           color: fontColor ?? AppColor.secondaryColor,
           letterSpacing: 3.5,
-          fontSize: 30,
+          fontSize:  getProportionateScreenHeight(30),
           height: 1.2),
     );
   }

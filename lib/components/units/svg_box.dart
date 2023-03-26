@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class SvgBox extends StatelessWidget {
   final double? width;
@@ -20,8 +21,8 @@ class SvgBox extends StatelessWidget {
     return Center(
       child: Container(
         margin: EdgeInsets.only(bottom: padding ?? 0),
-        width: width ?? 110,
-        height: height ?? 110,
+        width: width ??  getProportionateScreenHeight(110),
+        height: height ??  getProportionateScreenHeight(10),
         child: SvgPicture.asset('assets/svg/${animalSvgPath!}'),
       ),
     );
@@ -29,10 +30,10 @@ class SvgBox extends StatelessWidget {
 
   factory SvgBox.details(String svg){
     return  SvgBox(
-                  padding: 20,
+                  padding:  getProportionateScreenWidth(20),
                   animalSvgPath: svg,
-                  width: 220,
-                  height: 220,
+                  width:  getProportionateScreenWidth(220),
+                  height: getProportionateScreenHeight(220),
                 );
   }
 }

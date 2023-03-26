@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:voices_of_animals/colors.dart';
 import 'package:voices_of_animals/components/units/name_sound_texts.dart';
 import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class AnimalCard extends StatelessWidget {
   final String animalName;
@@ -22,15 +23,16 @@ class AnimalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       width: double.infinity,
-      height: 145,
+      height: getProportionateScreenHeight(145),
       child: Row(
         children: [
           Hero(
               tag: animalSvgPath,
               child: ReflectableSvgAndLand(
                 landHeight: 62,
+               
                 svg: animalSvgPath,
                 index: index,
                 svgBottomPadding: 10,
@@ -39,9 +41,9 @@ class AnimalCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              width: 160,
-              height: 80,
+              margin: EdgeInsets.only(bottom: getProportionateScreenHeight(10)),
+              width: getProportionateScreenWidth(160),
+              height: getProportionateScreenHeight(80),
               child: AnimalNameTextAndItsSoundText(
                 animalName: animalName,
                 animalSoundName: animalSoundName,

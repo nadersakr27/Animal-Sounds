@@ -5,6 +5,7 @@ import 'package:voices_of_animals/components/units/arrow.dart';
 import 'package:voices_of_animals/components/units/info_texts_list.dart';
 import 'package:voices_of_animals/components/units/reflectable_svg_land.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:voices_of_animals/size_config.dart';
 
 class Body extends StatefulWidget {
   final Animal animal;
@@ -60,26 +61,26 @@ class _BodyState extends State<Body> {
     final String sound =
         '${(widget.animal.name ?? "chicken").toLowerCase()}.mp3';
     return Padding(
-      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      padding: EdgeInsets.only(top:  getProportionateScreenHeight(20), left: getProportionateScreenWidth(20), right: getProportionateScreenWidth(20)),
       child: SizedBox(
         height: double.infinity,
         child: Column(
           children: [
             const ArrowBoxAppBar(),
             SizedBox(
-              height: 240,
+              height:  getProportionateScreenHeight(240),
               child: Hero(
                 tag: svg,
                 child: ReflectableSvgAndLand(
                   svg: svg,
                   index: widget.index,
                   boxWidth: double.infinity,
-                  landHeight: 105,
+                  landHeight:  getProportionateScreenHeight(105),
                   landWidth: double.infinity,
-                  svgHeight: 220,
-                  svgWidth: 220,
-                  svgBottomPadding: 20,
-                  reflectWidth: MediaQuery.of(context).size.width - 40,
+                  svgHeight:  getProportionateScreenHeight(220),
+                  svgWidth:  getProportionateScreenHeight(220),
+                  svgBottomPadding:  getProportionateScreenHeight(20),
+                  reflectWidth: MediaQuery.of(context).size.width - getProportionateScreenWidth(40),
                 ),
               ),
             ),
@@ -99,10 +100,10 @@ class _BodyState extends State<Body> {
                       }),
                   CircleAvatar(
                     backgroundColor: AppColor.secondaryColor,
-                    radius: 35,
+                    radius: getProportionateScreenHeight(35),
                     child: IconButton(
                       icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                      iconSize: 50,
+                      iconSize: getProportionateScreenHeight(50),
                       color: Colors.white,
                       onPressed: () async {
                         if (isPlaying) {
@@ -113,8 +114,8 @@ class _BodyState extends State<Body> {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 5,
+                  SizedBox(
+                    height: getProportionateScreenHeight(5),
                   )
                 ],
               ),
