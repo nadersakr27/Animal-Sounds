@@ -18,8 +18,7 @@ In this app learn many things
 
 6 - Learn many new and very important widgets
     
-    1 - Directionalty: Since I needed to change the direction of some widgets to add an aesthetic touch to the application,
-        and there was       text,    I had to use this widget
+    1 - Directionalty: Since I needed to change the direction of some widgets to add an aesthetic touch to the application.
     
     2 - Transport : Since I needed to flip some animal pictures to fit the shape and direction
     
